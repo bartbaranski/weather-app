@@ -1,0 +1,208 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+
+.App {
+  font-family: Arial, sans-serif;
+  color: #333;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header-box {
+  background: rgba(255,255,255,0.8);
+  display: inline-block;
+  padding: 15px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-box h1, .header-box h2 {
+  margin: 5px 0;
+}
+
+/* Tła w zależności od warunków */
+.App.clear {
+  background: url('/public/images/clear.webp') no-repeat center center fixed;
+}
+
+.App.cloudy {
+  background: url('/public/images/cloudy.webp') no-repeat center center fixed;
+}
+
+.App.foggy {
+  background: url('/public/images/foggy.webp') no-repeat center center fixed;
+}
+
+.App.rain {
+  background: url('/public/images/rain.webp') no-repeat center center fixed;
+}
+
+.App.snow {
+  background: url('/public/images/snow.webp') no-repeat center center fixed;
+}
+
+.App.storm {
+  background: url('/public/images/storm.webp') no-repeat center center fixed;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+}
+
+.search-container input {
+  padding: 8px;
+  font-size: 16px;
+  width: 200px;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.suggestions-list li {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestions-list li:hover {
+  background: #f0f0f0;
+}
+
+.current-weather, .forecast-day {
+  background: rgba(255,255,255,0.8);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.current-weather .weather-info, .forecast-day .day-weather {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.forecast-day {
+  box-sizing: border-box;
+}
+
+.forecast-day h4 {
+  text-align: center;
+}
+
+.icon {
+  font-size: 2em;
+  flex-shrink: 0;
+}
+
+.current-weather h3 {
+  text-align: center;
+}
+
+
+.weather-container {
+  display: flex;
+  align-items: flex-start;
+  
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.current-weather-info {
+  display: flex;
+  flex-direction: column;
+ 
+  width: 30%;
+}
+
+.chart-buttons button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.hourly-chart-small {
+  
+  height: 10em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 70%;
+}
+
+.hourly-chart-small canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.details span {
+  margin-left: 1.5em;
+}
+
+.chart-buttons {
+  
+  text-align: center;
+}
+
+
+@media (max-width: 600px) {
+  .header-box {
+    display: block;
+    text-align: center;
+  }
+
+  .search-container input {
+    width: 100%;
+  }
+
+  .suggestions-list {
+    width: 100%;
+  }
+
+  .forecast {
+    grid-template-columns: 1fr;
+  }
+}
