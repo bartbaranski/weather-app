@@ -6,6 +6,7 @@ html, body {
 body {
   width: 100%;
   height: 100%;
+  
 }
 
 
@@ -17,7 +18,9 @@ body {
   min-height: 100vh;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat; 
   background-attachment: fixed;
+  
 }
 
 .header-box {
@@ -35,27 +38,27 @@ body {
 }
 
 /* Tła w zależności od warunków */
-.App.clear {
+body.clear {
   background: url('/public/images/clear.webp') no-repeat center center fixed;
 }
 
-.App.cloudy {
+body.cloudy {
   background: url('/public/images/cloudy.webp') no-repeat center center fixed;
 }
 
-.App.foggy {
+body.foggy {
   background: url('/public/images/foggy.webp') no-repeat center center fixed;
 }
 
-.App.rain {
+body.rain {
   background: url('/public/images/rain.webp') no-repeat center center fixed;
 }
 
-.App.snow {
+body.snow {
   background: url('/public/images/snow.webp') no-repeat center center fixed;
 }
 
-.App.storm {
+body.storm {
   background: url('/public/images/storm.webp') no-repeat center center fixed;
 }
 

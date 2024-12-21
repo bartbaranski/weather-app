@@ -147,11 +147,22 @@ function App() {
     return () => clearInterval(interval);
   }, [timezone]);
 
-  if (loading) {
-    return <div className="App">Loading weather data...</div>;
-  }
+  
+  const backgroundClass = currentWeather
+  ? getWeatherBackgroundClass(currentWeather.weathercode)
+  : 'cloudy';
 
-  const backgroundClass = currentWeather ? getWeatherBackgroundClass(currentWeather.weathercode) : 'cloudy';
+useEffect(() => {
+  // Usuwamy poprzednie klasy z body
+  document.body.className = '';
+  // Dodajemy klasę zależną od pogody (np. 'clear', 'cloudy', 'rain')
+  document.body.classList.add(backgroundClass);
+}, [backgroundClass]);
+  
+if (loading) {
+  return <div className="App">Loading weather data...</div>;
+}
+
 
   return (
     <div className={`App ${backgroundClass}`}>
